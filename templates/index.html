@@ -1,0 +1,36 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% extends "base.html" %} {% block content %}
+
+{% include 'navbar.html' %}
+
+<body>
+<div class="container" style="justify-content:center; padding: 20px;">
+        <table style="width:50%; margin:0 auto; justify-content:center;">
+            <tr>
+                <td>Name</td>
+                <td>Location</td>
+                <td>Wifi</td>
+                <td>Power</td>
+            </tr>
+        </table>
+
+</div>
+<div id="map">
+</div>
+</body>
+<script src="https://unpkg.com/maplibre-gl@5.0.0/dist/maplibre-gl.js">
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const map = new maplibregl.Map({
+            container: 'map', // container id
+            style: 'https://demotiles.maplibre.org/globe.json', // style URL
+            center: [0, 0], // starting position [lng, lat]
+            zoom: 2 // starting zoom
+        });
+    });
+</script>
+
+{% include 'footer.html' %}
+
+{% endblock %}
