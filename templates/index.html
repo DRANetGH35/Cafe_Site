@@ -2,9 +2,15 @@
 {% extends "base.html" %} {% block content %}
 
 {% include 'navbar.html' %}
-
+<style>
+#map{
+    height: 50vh;
+    min-height:500px;
+    min-width:100vh;
+}
+</style>
 <body>
-<div class="container" style="justify-content:center; padding: 20px;">
+<div class="container-fluid" style="justify-content:center; padding: 20px;">
         <table style="width:50%; margin:0 auto; justify-content:center;">
             <tr>
                 <td>Name</td>
