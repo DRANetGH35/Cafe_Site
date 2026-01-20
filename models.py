@@ -14,6 +14,5 @@ class cafe(db.Model):
     has_toilet: Mapped[bool] = mapped_column(Boolean)
     has_wifi: Mapped[bool] = mapped_column(Boolean)
     can_take_calls: Mapped[bool] = mapped_column(Boolean)
-    is_admin: Mapped[bool] = mapped_column(Boolean, nullable=False)
     seats: Mapped[str] = mapped_column(String(1000))
     coffee_price: Mapped[str] = mapped_column(String(1000))
