@@ -1,5 +1,5 @@
 from flask_login import UserMixin
-from sqlalchemy import Integer, String, Boolean
+from sqlalchemy import Integer, String, Boolean, Float
 from sqlalchemy.orm import Mapped, mapped_column
 
 from extensions import db
@@ -16,3 +16,5 @@ class cafe(db.Model):
     can_take_calls: Mapped[bool] = mapped_column(Boolean)
     seats: Mapped[str] = mapped_column(String(1000))
     coffee_price: Mapped[str] = mapped_column(String(1000))
+    lat: Mapped[float] = mapped_column(Float, nullable=True)
+    lng: Mapped[float] = mapped_column(Float, nullable=True)

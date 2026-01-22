@@ -12,7 +12,7 @@
 <body>
 
 <div style="width: 100%; overflow: hidden;">
-    <div style="height: 500px; width:600px; float: left; overflow: auto;">
+    <div style="height: 500px; width:49%; float: left; overflow: auto;">
     {% for cafe in data %}
     <p>{{ cafe.name }}, </p>
     {% endfor %}
@@ -20,7 +20,7 @@
     <p> cafe {{ i }} </p>
     {% endfor %}
     </div>
-    <div style="margin-left: 620px;" id="map">
+    <div style="margin-left: 50%; width: 50%" id="map">
     </div>
 </div>
 </body>
@@ -51,16 +51,7 @@
                                 title: 'Five 07',
                                 icon: 'monument'
                             }
-                        },
-                        {
-                            type: 'Feature',
-                            geometry: {
-                                type: 'Point',
-                                coordinates: [2.352, 48.856]
-                            },
-                            properties: {title: 'Eiffel Tower'}
                         }
-                        // ... add as many as you want
                     ]
                 }
             });

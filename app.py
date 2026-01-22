@@ -2,7 +2,7 @@ from flask import Flask
 from datetime import timedelta
 from sqlalchemy import select
 from extensions import db, login_manager, bootstrap
-
+from flask_migrate import Migrate
 
 def create_app():
     app = Flask(__name__)
@@ -15,11 +15,10 @@ def create_app():
 
     db.init_app(app)
     bootstrap.init_app(app)
+    migrate = Migrate(app, db)
 
+    from models import cafe
 
-
-    with app.app_context():
-        db.create_all()
 
 
 
