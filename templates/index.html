@@ -31,7 +31,51 @@
             center: [-118.85, 34.20], // starting position [lng, lat]
             zoom: 11.5 // starting zoom
         });
+        map.on('load', () => {
+        // Add GeoJSON source (you can also load from URL)
+            map.addSource('locations', {
+                type: 'geojson',
+                data: {
+                    type: 'FeatureCollection',
+                    features: [
+                        {
+                            type: 'Feature',
+                            geometry: {
+                                type: 'Point',
+                                coordinates: [-118.84150346378853, 34.21002705418738]   // [lng, lat]
+                            },
+                            properties: {
+                                title: 'Five 07',
+                                icon: 'monument'
+                            }
+                        },
+                        {
+                            type: 'Feature',
+                            geometry: {
+                                type: 'Point',
+                                coordinates: [2.352, 48.856]
+                            },
+                            properties: {title: 'Eiffel Tower'}
+                        }
+                        // ... add as many as you want
+                    ]
+                }
+            });
+            map.addLayer({
+                id: 'points-circle',
+                type: 'circle',
+                source: 'locations',
+                paint: {
+                  'circle-radius': 8,
+                  'circle-color': '#ff5733',
+                  'circle-stroke-color': 'white',
+                  'circle-stroke-width': 2
+                }
+            });
+        });
     });
+
+
 </script>
 
 {% include 'footer.html' %}
