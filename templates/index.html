@@ -12,9 +12,12 @@
 <body>
 
 <div style="width: 100%; overflow: hidden;">
-    <div style="width:600px; float: left;">
+    <div style="height: 500px; width:600px; float: left; overflow: auto;">
     {% for cafe in data %}
     <p>{{ cafe.name }}, </p>
+    {% endfor %}
+    {% for i in range(20) %}
+    <p> cafe {{ i }} </p>
     {% endfor %}
     </div>
     <div style="margin-left: 620px;" id="map">
